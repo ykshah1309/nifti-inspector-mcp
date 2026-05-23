@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nifti-inspector-mcp"
+version = "0.1.0"
+description = "MCP server for NIfTI neuroimaging file inspection and BIDS dataset validation"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Yash Kamlesh Shah", email = "yash@avarieux.com" }
+]
+keywords = ["mcp", "nifti", "bids", "neuroimaging", "fmri", "dti", "mri"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "nibabel>=5.0.0",
+    "pybids>=0.16.0",
+    "numpy>=1.24.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+nifti-inspector = "nifti_inspector.server:main"
+
+[project.urls]
+Homepage = "https://github.com/ykshah1309/nifti-inspector-mcp"
+Repository = "https://github.com/ykshah1309/nifti-inspector-mcp"
+Issues = "https://github.com/ykshah1309/nifti-inspector-mcp/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nifti_inspector"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"

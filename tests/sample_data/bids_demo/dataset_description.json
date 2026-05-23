@@ -1,0 +1,8 @@
+{
+  "Name": "nifti-inspector-mcp demo dataset",
+  "BIDSVersion": "1.8.0",
+  "DatasetType": "raw",
+  "Authors": [
+    "Yash Kamlesh Shah"
+  ]
+}
